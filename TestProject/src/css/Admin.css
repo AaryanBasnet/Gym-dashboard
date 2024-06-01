@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* background-color: #cdd0d4; */
+    /* color: #9e9ea4; */
+    font-family: 'Montserrat', sans-serif;
+}
+.icon {
+    vertical-align: middle;
+    line-height: 1px;
+    font-size: 20px;
+}
+ 
+.icon_header {
+    vertical-align: middle;
+    line-height: 1px;
+    font-size: 26px;
+}
+ 
+.icon, .icon_header {
+    margin-right: 5px;
+}
+.close_icon {
+    color: rgb(3, 3, 3);
+    margin-left: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.grid-container {
+    width: 100%;
+    height:100vh;
+    display: flex;
+    align-items:top; 
+}
+
+  /* Sidebar  */
+#sidebar {
+    position: fixed;
+    grid-area: sidebar;
+    height: 100;
+    background-color: white;
+    overflow-y: auto;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    z-index: 1; 
+}
+.sidebar-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px 0px 30px;
+    margin-bottom: 30px;
+}
+.sidebar-title > span {
+    display: none;
+}
+.sidebar-brand {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #2e7d32;
+}
+.sidebar-list {
+    padding: 0;
+    list-style-type: none;
+}
+.sidebar-list-item {
+    padding: 20px 20px 20px 20px;
+    font-size: 18px;
+}
+.sidebar-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+.sidebar-list-item > a {
+    text-decoration: none;
+    color: black;
+}
+ 
+.sidebar-responsive {
+    display: inline !important;
+    position: absolute;
+    z-index: 12 !important;
+}
+  /* End Sidebar  */
+
+  /* Medium <= 992px */
+@media screen and (max-width: 992px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.2fr 3fr;
+      grid-template-areas:
+        'header'
+        'main';
+}
+/*   
+    #sidebar {
+      display: none;
+    } */
+    .menu-icon {
+      display: inline;
+    }
+    .sidebar-title > span {
+      display: inline;
+    }
+}
+  /* Small <= 768px */
+@media screen and (max-width: 768px) {
+    .main-cards {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 0;
+    }
+    .charts {
+      grid-template-columns: 1fr;
+      margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .hedaer-left {
+      display: none;
+    }
+}
